@@ -1,0 +1,48 @@
+name: 识别错误
+description: 报告截图识别、计算或交互问题
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: 上传截图前请先移除姓名、学号等个人信息。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题描述
+      description: 实际发生了什么？
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 正确结果
+      description: 请填写你人工确认的课程数、成绩、学分或汇总结果。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开 radar_gpa.html
+        2. 导入图片
+        3. 查看识别结果
+    validations:
+      required: true
+  - type: dropdown
+    id: obstruction
+    attributes:
+      label: 截图是否存在遮挡或裁剪？
+      options:
+        - 否
+        - 有文字或贴纸遮挡
+        - 雷达图被裁剪
+        - 不确定
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: 浏览器与版本
+      placeholder: 例如 Edge 140
+
