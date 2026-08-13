@@ -1,0 +1,22 @@
+name: 功能建议
+description: 建议新的截图支持、交互或导出能力
+title: "[Feature] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 你想解决什么问题？
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 期望的使用方式
+      description: 请从使用者角度描述理想流程，不需要提供代码方案。
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: 示例或补充信息
+

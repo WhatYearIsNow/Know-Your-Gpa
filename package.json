@@ -1,0 +1,19 @@
+{
+  "name": "know-your-gpa",
+  "version": "1.0.0",
+  "description": "在浏览器本地识别微北洋 GPA 雷达图并计算加权成绩与 GPA。",
+  "private": true,
+  "scripts": {
+    "test": "npm run test:js && npm run test:browser && npm run test:python",
+    "test:js": "node tests/js/test_detector.js",
+    "test:browser": "python tests/browser/test_app.py",
+    "test:python": "python -m pytest"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0"
+  }
+}
