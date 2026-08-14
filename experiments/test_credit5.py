@@ -79,7 +79,7 @@ for i in range(N):
     print("{:>8d}  {:>8.0f}  {:>7.1f}%".format(i, credit_dists[-1], min(cred_pct, 100)))
 
 # Normalize and estimate credits
-total_credits = 38  # TERM_B total (36) + 2
+total_credits = 38  # reference total (36) + 2
 cred_ratios = [min(d / outer_r, 1.0) for d in credit_dists]
 cred_estimates = [r * total_credits / sum(cred_ratios) for r in cred_ratios]
 

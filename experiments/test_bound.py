@@ -56,9 +56,9 @@ for i in range(N):
     pct = credit_bounds[-1] / max_bound * 100 if max_bound > 0 else 0
     print("{:>6d}  {:>6.0f}  {:>7.1f}%".format(i, credit_bounds[-1], pct))
 
-# Also: check TERM_B data to see credit distribution
+# Also: check reference data to see credit distribution
 print()
-print("TERM_B credits: [4, 3, 1, 4, 2, 2, 1, 1, 3, 1, 2, 5, 3, 2, 1, 1]")
+print("reference credits: [3, 2, 4, 1, 2, 3, 1, 2, 4, 1, 3, 2, 2, 1, 3, 2]")
 cred_vals = [3,2,4,1,2,3,1,2,4,1,3,2,2,1,3,2]
 print("Distribution: max={} count of each:".format(max(cred_vals)))
 for v in sorted(set(cred_vals), reverse=True):

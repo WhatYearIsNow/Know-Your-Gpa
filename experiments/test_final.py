@@ -58,7 +58,7 @@ for i, cnt in enumerate(contours):
     scores = [(d/inner_r)**0.25*100 if inner_r>0 else 0 for d in dists]
     print("Scores:", [round(s,1) for s in scores])
     
-    # Credits from TERM_B (adjusted)
+    # Credits from reference (adjusted)
     cred = [4,3,2,4,2,2,2,1,3,1,2,5,3,2,1,1]
     n = min(N, len(cred))
     w_sum = sum(scores[i]*cred[i] for i in range(n))

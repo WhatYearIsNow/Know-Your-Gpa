@@ -48,7 +48,7 @@ python -m pytest
 运行旧版 OpenCV 诊断工具：
 
 ```powershell
-python radar_auto_detect.py "tests\fixtures\SYNTHETIC_TERM_2.jpg" "tests\fixtures\SYNTHETIC_TERM_2.txt"
+python radar_auto_detect.py "tests\fixtures\synthetic-16axes.jpg" "tests\fixtures\synthetic-16axes.txt"
 ```
 
 ## 仓库结构

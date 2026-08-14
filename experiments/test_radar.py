@@ -39,7 +39,7 @@ for f in sorted(os.listdir(IMG_DIR)):
     img = cv2.imdecode(np.frombuffer(raw, dtype=np.uint8), cv2.IMREAD_COLOR)
     if img is None: continue
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-    s_min = 155 if "TERM_A" in f else 150
+    s_min = 155 if "reference2" in f else 150
     low = np.array([90, s_min, 50])
     high = np.array([150, 255, 255])
     mask = cv2.inRange(hsv, low, high)

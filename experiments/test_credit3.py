@@ -83,13 +83,13 @@ for i in range(N):
 max_cred_d = max(credit_dists)
 credit_ratios = [d / max_cred_d for d in credit_dists]
 
-# Also get TERM_B credits for comparison
-cred_TERM_B = [4, 3, 1, 4, 2, 2, 1, 1, 3, 1, 2, 5, 3, 2, 1, 1]
-total_TERM_B = sum(cred_TERM_B)  # 36
-total_test1 = total_TERM_B + 2  # 38
+# Also get reference credits for comparison
+cred_reference = [3, 2, 4, 1, 2, 3, 1, 2, 4, 1, 3, 2, 2, 1, 3, 2]
+total_reference = sum(cred_reference)  # 36
+total_test1 = total_reference + 2  # 38
 
-# Normalize TERM_B credits to 8 by summing adjacent pairs
-cred_TERM_B_8 = [cred_TERM_B[i*2] + cred_TERM_B[i*2+1] for i in range(8)]
+# Normalize reference credits to 8 by summing adjacent pairs
+cred_reference_8 = [cred_reference[i*2] + cred_reference[i*2+1] for i in range(8)]
 # [4+3, 1+4, 2+2, 1+1, 3+1, 2+5, 3+2, 1+1] = [7, 5, 4, 2, 4, 7, 5, 2] = 36
 # +2 total = 38, need to distribute
 
@@ -107,5 +107,5 @@ for i in range(N):
         math.degrees(angle), axis_dists[i], score, credit_dists[i], cred_pct, cred_est))
 
 print()
-print("TERM_B credits (paired): {}".format(cred_TERM_B_8))
+print("reference credits (paired): {}".format(cred_reference_8))
 print("occluded-sample estimated credits: {}".format([round(credit_ratios[i] * total_test1, 1) for i in range(N)]))

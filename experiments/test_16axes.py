@@ -54,13 +54,13 @@ scores = [(d/inner_r)**0.25 * 100 if inner_r>0 else 0 for d in dists]
 for i in range(N):
     print("  axis{:>2d}: score={:.2f}".format(i, scores[i]))
 
-# Now for credits: TERM_B data
-cred_TERM_B = [3,2,4,1,2,3,1,2,4,1,3,2,2,1,3,2]
-print("\nTERM_B credits: {} sum={}".format(cred_TERM_B, sum(cred_TERM_B)))
+# Now for credits: reference data
+cred_reference = [3,2,4,1,2,3,1,2,4,1,3,2,2,1,3,2]
+print("\nreference credits: {} sum={}".format(cred_reference, sum(cred_reference)))
 
 # occluded-sample credits: almost same, +2 total = 38
 # Distribute +2: 
-test1_cred = list(cred_TERM_B)
+test1_cred = list(cred_reference)
 # simplest: add 1 to two of the 1-credit courses
 added = 0
 for i in range(len(test1_cred)):

@@ -64,9 +64,9 @@ for i in range(N):
 
 # Now detect credit polygon for sem1 and sem2 too (for validation)
 print()
-print("=== Validating on TERM_A (sem1) ===")
-for sem_path in [os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests", "fixtures", "SYNTHETIC_TERM_1.jpg"),
-                 os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests", "fixtures", "SYNTHETIC_TERM_2.jpg")]:
+print("=== Validating on reference2 (sem1) ===")
+for sem_path in [os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests", "fixtures", "reference2学期.jpg"),
+                 os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests", "fixtures", "reference学期.jpg")]:
     with open(sem_path, "rb") as fp: raw = fp.read()
     img2 = cv2.imdecode(np.frombuffer(raw, dtype=np.uint8), cv2.IMREAD_COLOR)
     h2, w2 = img2.shape[:2]
@@ -74,7 +74,7 @@ for sem_path in [os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", 
     S2 = hsv2[:,:,1]; V2 = hsv2[:,:,2]
     
     # Quick center estimate from blue polygon
-    s_min = 155 if "TERM_A" in sem_path else 150
+    s_min = 155 if "reference2" in sem_path else 150
     mask2 = cv2.inRange(hsv2, np.array([90, s_min, 50]), np.array([150, 255, 255]))
     k = np.ones((2,2), np.uint8)
     mask2 = cv2.dilate(mask2, k, 1); mask2 = cv2.erode(mask2, k, 1)

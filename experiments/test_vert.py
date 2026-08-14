@@ -38,7 +38,7 @@ for i, cnt in enumerate(contours):
     inner_r = max(sorted_dists)
     scores = [(d/inner_r)**0.25*100 for d in sorted_dists]
     
-    # TERM_B credits (adjusted +2)
+    # reference credits (adjusted +2)
     cred = [4,3,2,4,2,2,2,1,3,1,2,5,3,2,1,1]
     
     N_verts = len(sorted_dists)
@@ -56,5 +56,5 @@ for i, cnt in enumerate(contours):
     w_avg = w_sum / sum(cred[:n])
     gt_sum = sum([95,76,83,88,91,99,83,79,95,69,100,98,99,94,95,94][j]*cred[j] for j in range(n))
     gt_avg = gt_sum / sum(cred[:n])
-    print("\nWeighted avg: {:.2f} (GT from TERM_B scores: {:.2f})".format(w_avg, gt_avg))
+    print("\nWeighted avg: {:.2f} (GT from reference scores: {:.2f})".format(w_avg, gt_avg))
     break
