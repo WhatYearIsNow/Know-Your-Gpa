@@ -1,6 +1,6 @@
 import cv2, numpy as np, math, os
 
-path = r"D:\project\Know-Your-Gpa\测试集\occluded-sample.jpg"
+path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests", "fixtures", "occluded-sample.jpg")
 with open(path, "rb") as fp: raw = fp.read()
 img = cv2.imdecode(np.frombuffer(raw, dtype=np.uint8), cv2.IMREAD_COLOR)
 h, w = img.shape[:2]

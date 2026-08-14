@@ -1,6 +1,6 @@
 import cv2, numpy as np, math, os
 
-path = r"D:\project\Know-Your-Gpa\测试集\occluded-sample.jpg"
+path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests", "fixtures", "occluded-sample.jpg")
 with open(path, "rb") as fp: raw = fp.read()
 img = cv2.imdecode(np.frombuffer(raw, dtype=np.uint8), cv2.IMREAD_COLOR)
 h, w = img.shape[:2]
@@ -65,8 +65,8 @@ for i in range(N):
 # Now detect credit polygon for sem1 and sem2 too (for validation)
 print()
 print("=== Validating on TERM_A (sem1) ===")
-for sem_path in [r"D:\project\Know-Your-Gpa\测试集\SYNTHETIC_TERM_1.jpg",
-                 r"D:\project\Know-Your-Gpa\测试集\SYNTHETIC_TERM_2.jpg"]:
+for sem_path in [os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests", "fixtures", "SYNTHETIC_TERM_1.jpg"),
+                 os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests", "fixtures", "SYNTHETIC_TERM_2.jpg")]:
     with open(sem_path, "rb") as fp: raw = fp.read()
     img2 = cv2.imdecode(np.frombuffer(raw, dtype=np.uint8), cv2.IMREAD_COLOR)
     h2, w2 = img2.shape[:2]
