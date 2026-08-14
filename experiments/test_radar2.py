@@ -1,6 +1,6 @@
 import cv2, numpy as np, math, os
 
-IMG_DIR = r"D:\project\Know-Your-Gpa\测试集"
+IMG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests", "fixtures")
 
 def parse_gt(txt_path):
     courses = []
